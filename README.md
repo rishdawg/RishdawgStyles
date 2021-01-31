@@ -1,0 +1,2 @@
+# Learning
+ - Web safe colors: There are only 216 web safe colors. So only these colors will look the same across majority screens and OS (~99%). If a person is using a very old screen then they may not be able to see the corrent color, a green may come out to be brown. This is no longer considered to be a major concern as we are getting better screens, but still will effect people who do not necessarily have the means to afford the latest technology. https://websafecolors.info/color-chart.

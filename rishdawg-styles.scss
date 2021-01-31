@@ -1,0 +1,23 @@
+@import './rishdawg-tokens.scss';
+
+body {
+  background-color: $body-background-color;
+  color: $body-text-color;
+}
+.rish-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.rish-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.rish-col-center {
+  align-items: center;
+}
+
+.rish-row-center {
+  justify-content: center;
+}
