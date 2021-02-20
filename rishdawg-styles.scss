@@ -1,9 +1,9 @@
 @import './rishdawg-tokens.scss';
 
-// body {
-//   background-color: $body-background-color;
-//   color: $body-text-color;
-// }
+body {
+  background-color: $body-background-color;
+  color: $body-text-color;
+}
 .rish-row {
   display: flex;
   flex-direction: row;
