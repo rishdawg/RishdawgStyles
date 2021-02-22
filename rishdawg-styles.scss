@@ -23,8 +23,34 @@
 }
 
 .rish-carousel {
-  width: 500px;
   height: 500px;
   position: relative;
   overflow: hidden;
+  .rish-carousel-mover {
+    width: 10%;
+    position: absolute;
+    height: 50px;
+    &.rish-carousel-mover-left {
+      top: 200px;
+    }
+    &.rish-carousel-mover-right {
+      top: 200px;
+      right: 0px;
+    }
+  }
+  .rish-carousel-main {
+    margin: 0% 10%;
+    height: 100%;
+    text-align: center;
+    &.rish-carousel-main-img {
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 80%;
+    }
+    .rish-carousel-main-ytb {
+      height: 100%;
+      width: 80%;
+    }
+  }
 }

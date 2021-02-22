@@ -1,31 +1,31 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 const ImageItem = ({ url }) => {
     const style = {
-        backgroundImage: `url(${url})`,
-        backgroundPosition: 'center center',
-        backgroundSize: 'contain',
-        'background-repeat':'no-repeat',
-        height: '80%',
+        backgroundImage: `url(${url})`
     }
     return (
-        <div style={style}> </div>
+        <div style={style} className="rish-carousel-main rish-carousel-main-img"/>
     )
 };
 
-const MediaItem = ({ media: { type, url} }) => {
+const MediaItem = ({ media: { type, url, title} }) => {
     if(type === 'Image') {
         return <ImageItem url={url}/>;
     }
      else if(type === 'Youtube'){
         return (
-            <iframe src={url} width="80%" height="80%"/>
+            <div className="rish-carousel-main">
+                <iframe src={url} className="rish-carousel-main-ytb" title={title}/>
+            </div>
         )
      }
      else return <p>This is not a supported type of media at this point in time</p>
 }; 
 
-const Carousel = ({ all_media }) => {
+const Carousel = ({ all_media, viewPort }) => {
     const [ currentMediaIndex, setCurrentMediaIndex ] = useState(0);
     const goBack = () => {
         if(currentMediaIndex > 0) {
@@ -47,9 +47,17 @@ const Carousel = ({ all_media }) => {
     const currentMedia = all_media[currentMediaIndex];
     return (
         <div className="rish-carousel">
-           <MediaItem media={currentMedia}/>
-           <button onClick={() => goBack()}>prev</button>
-           <button onClick={() => goForward()}>Next</button>
+            <div className=" rish-carousel-mover rish-carousel-mover-left">
+                <button onClick={() => goBack()}>
+                    <FontAwesomeIcon icon={faChevronLeft} size="5x"/>
+                </button>
+            </div>
+                <MediaItem media={currentMedia}/>
+            <div className="rish-carousel-mover rish-carousel-mover-right">
+                <button onClick={() => goForward()}>
+                    <FontAwesomeIcon icon={faChevronRight} size="5x"/>
+                </button>
+            </div>
         </div>
     )
 };
